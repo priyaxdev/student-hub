@@ -1,75 +1,101 @@
-# React + TypeScript + Vite
+# 🎓 StudentHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A multi-page student dashboard portal built to master **React Router v8** concepts through a real-world project.
 
-Currently, two official plugins are available:
+## 📸 Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Page | Preview |
+|------|---------|
+| Home | 
+<img width="2940" height="1432" alt="image" src="https://github.com/user-attachments/assets/672533bc-e46c-4dc2-9b0c-c940ae88083e" />
+|
+| Courses | 
+<img width="2940" height="1432" alt="image" src="https://github.com/user-attachments/assets/e6accae8-4424-40fb-aabf-327b30fda3a1" />
+ |
+| Course Detail | 
+<img width="2940" height="1432" alt="image" src="https://github.com/user-attachments/assets/adfdb35f-707e-409e-b0dc-48bc11d8523d" />
+ |
+| Profile | 
+<img width="2940" height="1432" alt="image" src="https://github.com/user-attachments/assets/cbf8229e-6992-4e8d-8404-2892c96b8f22" />
+ |
+| Settings | 
+<img width="2940" height="1432" alt="image" src="https://github.com/user-attachments/assets/f21a60d3-48a2-4e2f-9d62-f3abdf032e4e" />
 
-## React Compiler
+| Notes | 
+<img width="2940" height="1432" alt="image" src="https://github.com/user-attachments/assets/7b4e41c2-fe57-46fa-bf8d-b461b5a66039" />
+ |
+| 404 | 
+<img width="2940" height="1432" alt="image" src="https://github.com/user-attachments/assets/57740733-3871-4ca0-a8b4-fdce6e775e1a" />
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Tool | Purpose |
+|------|---------|
+| React 19 | UI library |
+| TypeScript | Type safety |
+| Vite | Build tool |
+| Tailwind CSS v4 | Styling |
+| React Router v8 | Client-side routing |
+| Lucide React | Icons |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧠 React Router Concepts Covered
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Concept | Where |
+|---------|-------|
+| `BrowserRouter` | `AppRoutes.tsx` |
+| `Routes` + `Route` | `AppRoutes.tsx` |
+| `NavLink` + `isActive` | `Navbar.tsx` |
+| `Outlet` | `MainLayout.tsx`, `Profile.tsx` |
+| Index route | `Home.tsx` |
+| Dynamic routes `:courseid` | `Coursedetail.tsx` |
+| `useParams()` | `Coursedetail.tsx` |
+| `useNavigate()` | `Home.tsx`, `Coursedetail.tsx` |
+| `useLocation()` | `Profile.tsx` |
+| Nested routes | `/profile/settings` |
+| `*` 404 catch-all | `Notfound.tsx` |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Project Structure
+src/
 
+├── components/
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   └── Coursecard.tsx
+├── layouts/
+│   └── MainLayout.tsx
+├── pages/
+│   ├── Home.tsx
+│   ├── Courses.tsx
+│   ├── Coursedetail.tsx
+│   ├── Notes.tsx
+│   ├── Profile.tsx
+│   ├── Settings.tsx
+│   └── Notfound.tsx
+├── routes/
+│   └── AppRoutes.tsx
+├── data/
+│   ├── courses.ts
+│   └── student.ts
+└── types/
+├── course.ts
+└── student.ts
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/priyaxdev/student-hub.git
+cd studenthub
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🙏 Credits
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Built with guidance from **Claude (Anthropic)** —
+used as an AI pair programmer for UI code and concept explanations.
+Routing logic, data structures, and core implementation by **Priya**.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+> 🎯 Purpose: Learning project — built to practice React Router v8
+> through a real multi-page application.
